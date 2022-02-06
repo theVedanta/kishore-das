@@ -1,4 +1,5 @@
 import "./styles/index.css";
+import "./styles/all.css";
 // import BASE_API_URL from "./BASE_API_URL";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Nav from "./components/Nav";
