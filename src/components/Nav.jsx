@@ -17,17 +17,17 @@ const Nav = () => {
     };
 
     return (
-        <nav className="nav px-16 bg-gray flex justify-between items-center border-b-2 border-b-slate-200 fixed top-0 left-0 w-screen z-50 lap:px-10 bph:px-6">
-            <div className="logo-hold w-1/3 bph:w-1/2">
+        <nav className="nav px-16 bg-gray flex justify-between items-center border-b-2 border-b-slate-200 fixed top-0 left-0 w-screen z-50 lap:px-10 ph:px-6">
+            <div className="logo-hold w-1/3 ph:w-1/2">
                 <Link to="/">
                     <img
                         src="/assets/KD.svg"
                         alt="logo"
-                        className="logo w-12 h-6 object-contain lap:h-5 lap:w-10 tab:w-8 tab:h-4 bph:my-4"
+                        className="logo w-12 h-6 object-contain lap:h-5 lap:w-10 tab:w-8 tab:h-4 ph:my-4"
                     />
                 </Link>
             </div>
-            <div className="links w-1/3 flex justify-center bph:hidden">
+            <div className="links w-1/3 flex justify-center ph:hidden">
                 {[
                     ["About", "#About"],
                     ["Experience", "#Experience"],
@@ -51,7 +51,7 @@ const Nav = () => {
                     </a>
                 ))}
             </div>
-            <div className="sub-links w-1/3 flex justify-end bph:hidden">
+            <div className="sub-links w-1/3 flex justify-end ph:hidden">
                 {[
                     ["Projects", "/projects"],
                     ["Blog", "/blog"],
@@ -64,7 +64,7 @@ const Nav = () => {
                     </Link>
                 ))}
             </div>
-            <div className="w-1/2 hidden justify-end items-center bph:flex">
+            <div className="w-1/2 hidden justify-end items-center ph:flex">
                 <FaBars className="cursor-pointer" />
             </div>
         </nav>

@@ -4,7 +4,7 @@ const About = () => {
     return (
         <section id="About">
             <Heading text="About" />
-            <p className="text-lg mt-10 blap:text-base lap:text-text-sm tab:text-xs bph:mt-5 bph:text-justify">
+            <p className="text-lg mt-10 blap:text-base lap:text-text-sm tab:text-xs ph:mt-5 ph:text-justify">
                 Lorem ipsum dolor sit amet. Et repellendus molestiae est maxime
                 nemo et odio excepturi et perferendis dolorem! Et voluptas
                 consequatur in molestiae quisquam est dolorem odit hic illum

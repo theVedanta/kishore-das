@@ -5,13 +5,13 @@ const Testimonial = () => {
                 <img
                     src="/assets/kishoreji.png"
                     alt="text-img"
-                    className="w-20 h-20 rounded-full blap:w-24 blap:h-24 lap:w-20 lap:h-20 tab:w-14 tab:h-14 bph:w-12 bph:h-12"
+                    className="w-20 h-20 rounded-full blap:w-24 blap:h-24 lap:w-20 lap:h-20 tab:w-14 tab:h-14 ph:w-12 ph:h-12"
                 />
-                <h1 className="text-4xl font-medium ml-10 blap:text-3xl lap:text-2xl tab:text-xl bph:text-base bph:ml-5">
+                <h1 className="text-4xl font-medium ml-10 blap:text-3xl lap:text-2xl tab:text-xl ph:text-base ph:ml-5">
                     Ishaan Das - CEO, Google
                 </h1>
             </div>
-            <p className="text-xl font-normal mt-10 pr-16 lap:text-base tab:text-sm tab:pr-6 bph:pr-0 bph:text-justify bph:mt-5">
+            <p className="text-xl font-normal mt-10 pr-16 lap:text-base tab:text-sm tab:pr-6 ph:pr-0 ph:text-justify ph:mt-5">
                 “Lorem ipsum dolor sit amet. Et repellendus molestiae est maxime
                 nemo et odio excepturi et perferendis dolorem! Et voluptas
                 consequatur in molestiae quisquam est dolorem odit hic illum
