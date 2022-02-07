@@ -10,6 +10,7 @@ img {
 }
 .owl-stage-outer {
     overflow: hidden;
+    margin-top: 7vh;
 }
 .owl-stage {
     display: flex;
@@ -42,4 +43,42 @@ img {
 }
 .owl-dot.active span {
     background-color: #6198fe;
+}
+@media (max-width: 1279px) {
+    .owl-dot span {
+        width: 9px;
+        height: 9px;
+    }
+    .owl-dot {
+        padding: 2vh 0.7vw;
+        margin: 0.4vh 0.3vw;
+    }
+}
+@media (max-width: 1023px) {
+    .owl-dot span {
+        width: 10px;
+        height: 10px;
+    }
+    .owl-dot {
+        padding: 2vh 0.7vw;
+        margin: 0.4vh 0.3vw;
+    }
+    .owl-item {
+        height: 24vh;
+    }
+    .owl-stage-outer {
+        margin-top: 3vh;
+    }
+}
+@media (max-width: 767px) {
+    .owl-dot {
+        padding: 2vh 2vw;
+        margin: 0.4vh 1vw;
+    }
+    .owl-item {
+        height: 36vh;
+    }
+    .owl-stage-outer {
+        margin-top: 3vh;
+    }
 }

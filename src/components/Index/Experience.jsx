@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Card from "./Card";
+import Heading from "./Heading";
 
 const Experience = () => {
     const [exps, setExps] = useState([]);
@@ -39,7 +40,7 @@ const Experience = () => {
 
     return (
         <section id="Experience">
-            <h1 className="text-6xl text-blue font-serif mb-4">Experience</h1>
+            <Heading text="Experience" />
             {exps.map((exp) => {
                 return <Card content={exp} />;
             })}

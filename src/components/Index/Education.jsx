@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Card from "./Card";
+import Heading from "./Heading";
 
 const Education = () => {
     const [edus, setEdus] = useState([]);
@@ -25,7 +26,7 @@ const Education = () => {
 
     return (
         <section id="Education">
-            <h1 className="text-6xl text-blue font-serif mb-4">Education</h1>
+            <Heading text="Education" />
             {edus.map((edu) => {
                 return <Card content={edu} />;
             })}

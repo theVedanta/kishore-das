@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Heading from "./Heading";
 
 const Contact = () => {
     const [contacts, setContacts] = useState([]);
@@ -12,14 +13,13 @@ const Contact = () => {
     }, []);
 
     return (
-        <section id="Contact" className="mb-44">
-            <h1 className="text-6xl text-blue font-serif mb-16">
-                Contact Information
-            </h1>
+        <section id="Contact" className="mb-44 tab:mb-20">
+            <Heading text="Contact" />
+            <br />
             {contacts.map((contact) => {
                 return (
-                    <div className="flex my-6">
-                        <h1 className="font-medium text-3xl">
+                    <div className="flex my-6 lap:my-3">
+                        <h1 className="font-medium text-3xl blap:text-2xl lap:text-lg">
                             {contact.type} -{" "}
                             <i className="font-normal">{contact.value}</i>
                         </h1>

@@ -1,6 +1,7 @@
 import OwlCarousel from "react-owl-carousel2";
 import { useRef } from "react";
 import Testimonial from "./Testimonial";
+import Heading from "./Heading";
 
 const options = {
     items: 1,
@@ -16,9 +17,7 @@ const Testimonials = () => {
 
     return (
         <section id="Testimonials">
-            <h1 className="text-6xl text-blue font-serif mb-16">
-                Testimonials
-            </h1>
+            <Heading text="Testimonials" />
             <OwlCarousel ref={testRef} options={options}>
                 <Testimonial />
                 <Testimonial />
