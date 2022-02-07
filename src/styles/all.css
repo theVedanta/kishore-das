@@ -1,6 +1,45 @@
 section {
-    margin-top: 7vh;
+    padding-top: 8vh;
+}
+html,
+body {
+    scroll-behavior: smooth;
 }
 img {
     object-fit: cover;
+}
+.owl-stage-outer {
+    overflow: hidden;
+}
+.owl-stage {
+    display: flex;
+}
+.owl-nav {
+    display: none;
+}
+.owl-item {
+    width: 100%;
+}
+.owl-dots {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.owl-dot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3vh 0.7vw;
+    margin: 1vh 0.3vw;
+    cursor: pointer;
+}
+.owl-dot span {
+    width: 12px;
+    height: 12px;
+    background-color: #f1f3f4;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+.owl-dot.active span {
+    background-color: #6198fe;
 }

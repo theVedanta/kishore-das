@@ -24,7 +24,7 @@ const Education = () => {
     }, []);
 
     return (
-        <section>
+        <section id="Education">
             <h1 className="text-6xl text-blue font-serif mb-4">Education</h1>
             {edus.map((edu) => {
                 return <Card content={edu} />;

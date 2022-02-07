@@ -414,6 +414,7 @@ module.exports = {
             light: "300",
             normal: "300",
             medium: "400",
+            semiMed: "500",
             semibold: "600",
             bold: "700",
             extrabold: "800",
