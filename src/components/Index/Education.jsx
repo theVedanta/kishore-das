@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Card from "./Card";
-import Heading from "./Heading";
+import Heading from "../Heading";
 
 const Education = () => {
     const [edus, setEdus] = useState([]);

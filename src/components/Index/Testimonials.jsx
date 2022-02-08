@@ -1,7 +1,7 @@
 import OwlCarousel from "react-owl-carousel2";
 import { useRef } from "react";
 import Testimonial from "./Testimonial";
-import Heading from "./Heading";
+import Heading from "../Heading";
 
 const options = {
     items: 1,

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Heading from "./Heading";
+import Heading from "../Heading";
 
 const Contact = () => {
     const [contacts, setContacts] = useState([]);
@@ -13,7 +13,7 @@ const Contact = () => {
     }, []);
 
     return (
-        <section id="Contact" className="mb-44 tab:mb-20">
+        <section id="Contact" className="pb-44 tab:pb-20">
             <Heading text="Contact" />
             <br />
             {contacts.map((contact) => {

@@ -18,7 +18,13 @@ const Nav = () => {
     return (
         <nav className="nav px-16 bg-gray flex justify-between items-center border-b-2 border-b-slate-200 fixed top-0 left-0 w-screen z-50 lap:px-10 ph:px-6">
             <div className="logo-hold w-1/3 ph:w-1/2">
-                <Link to="/">
+                <Link
+                    onClick={() => {
+                        setActiveLink("");
+                        document.title = `Kishore Das`;
+                    }}
+                    to="/"
+                >
                     <img
                         src="/assets/KD.svg"
                         alt="logo"
@@ -28,13 +34,14 @@ const Nav = () => {
             </div>
             <div className="links w-1/3 flex justify-center ph:hidden">
                 {[
-                    ["About", "#About"],
-                    ["Experience", "#Experience"],
-                    ["Education", "#Education"],
-                    ["Testimonials", "#Testimonials"],
-                    ["Contact", "#Contact"],
+                    ["About", "/#About"],
+                    ["Experience", "/#Experience"],
+                    ["Education", "/#Education"],
+                    ["Testimonials", "/#Testimonials"],
+                    ["Contact", "/#Contact"],
                 ].map(([title, url]) => (
                     <a
+                        key={title}
                         href={url}
                         className={
                             title === activeLink
@@ -51,13 +58,19 @@ const Nav = () => {
                 ))}
             </div>
             <div className="sub-links w-1/3 flex justify-end ph:hidden">
-                {[
-                    ["Projects", "/projects"],
-                    ["Blog", "/blog"],
-                ].map(([title, url]) => (
+                {[["Blog", "/blog"]].map(([title, url]) => (
                     <Link
+                        key={title}
                         to={url}
-                        className="py-5 px-6 inline-block lap:px-4 lap:py-4 lap:text-sm tab:px-2 tab:text-xs"
+                        className={
+                            title === activeLink
+                                ? "py-5 px-6 inline-block transition-all duration-200 ease-in-out mx-1 lap:px-4 lap:py-4 lap:text-sm tab:px-2 tab:text-xs text-blue"
+                                : "py-5 px-6 inline-block transition-all duration-200 ease-in-out mx-1 lap:px-4 lap:py-4 lap:text-sm tab:px-2 tab:text-xs"
+                        }
+                        onClick={() => {
+                            setActiveLink(title);
+                            document.title = `Kishore Das - ${title}`;
+                        }}
                     >
                         {title}
                     </Link>

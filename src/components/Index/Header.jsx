@@ -1,5 +1,5 @@
 import { FaEnvelope } from "react-icons/fa";
-import Heading from "./Heading";
+import Heading from "../Heading";
 
 const Header = () => {
     return (

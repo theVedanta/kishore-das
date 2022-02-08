@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Card from "./Card";
-import Heading from "./Heading";
+import Heading from "../Heading";
 
 const Experience = () => {
     const [exps, setExps] = useState([]);

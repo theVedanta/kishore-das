@@ -4,6 +4,8 @@ import "./styles/all.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Nav from "./components/Nav";
 import Index from "./components/Index";
+import Blogs from "./components/Blog/Blogs";
+import BlogPage from "./components/Blog/BlogPage";
 
 const App = () => {
     return (
@@ -11,6 +13,8 @@ const App = () => {
             <Nav />
             <Routes>
                 <Route exact path="/" element={<Index />} />
+                <Route exact path="/blog" element={<Blogs />} />
+                <Route exact path="/blog/:id" element={<BlogPage />} />
             </Routes>
         </BrowserRouter>
     );
