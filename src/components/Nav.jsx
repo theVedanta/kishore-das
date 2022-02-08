@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
 
 const Nav = () => {
     const [activeLink, setActiveLink] = useState("");
@@ -63,9 +62,6 @@ const Nav = () => {
                         {title}
                     </Link>
                 ))}
-            </div>
-            <div className="w-1/2 hidden justify-end items-center ph:flex">
-                <FaBars className="cursor-pointer" />
             </div>
         </nav>
     );

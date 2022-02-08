@@ -10,6 +10,7 @@ const options = {
     loop: true,
     dots: true,
     rewind: true,
+    autoplayTimeout: 40000,
 };
 
 const Testimonials = () => {
