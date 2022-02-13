@@ -1,16 +1,25 @@
 import { Link } from "react-router-dom";
 
-const Blog = ({ title, p, timestamp, id }) => {
+const Blog = ({ title, p, timestamp, id, tags }) => {
     return (
         <Link
-            className="flex w-full flex-col py-8 px-16 bg-gray rounded-3xl my-5 transition-all duration-150 hover:bg-blue hover:text-white"
+            className="flex w-full flex-col py-8 px-16 bg-gray rounded-3xl my-5 transition-all duration-150 hover:bg-blue hover:text-white ph:px-10"
             to={`/blog/${id}`}
         >
-            <h1 className="text-5xl font-serif mb-4 blap:text-5xl lap:text-4xl ph:text-center">
-                {title}
-            </h1>
-            <p className="text-xl font-normal mb-8 mt-2 leading-8">{p}</p>
-            <p className="text-lg opacity-70 tracking-wide">{timestamp}</p>
+            <div className="flex">
+                <div className="flex flex-col mb-6 w-2/3">
+                    <h1 className="text-5xl font-serif mb-4 blap:text-5xl lap:text-4xl ph:text-center">
+                        {title}
+                    </h1>
+                    <h2 className="opacity-70 text-3xl font-normal">
+                        {tags.join(", ")}
+                    </h2>
+                </div>
+                <h2 className="time w-1/2 flex mt-4 font-normal opacity-70 justify-end text-2xl">
+                    {timestamp}
+                </h2>
+            </div>
+            <p className="text-xl font-normal mt-2 pr-32 leading-8">{p}</p>
         </Link>
     );
 };

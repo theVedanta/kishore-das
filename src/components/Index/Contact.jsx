@@ -6,8 +6,8 @@ const Contact = () => {
 
     useEffect(() => {
         setContacts([
-            { type: "Email", value: "hotmail.co,gmail.com" },
-            { type: "Number", value: "1234567890" },
+            { type: "Email", value: "mailto:hotmail.co" },
+            { type: "Number", value: "tel:1234567890" },
             { type: "Linkedin", value: "https://www.linkedin.com/" },
         ]);
     }, []);
@@ -18,10 +18,19 @@ const Contact = () => {
             <br />
             {contacts.map((contact) => {
                 return (
-                    <div className="flex my-6 lap:my-3">
+                    <div className="flex my-6 lap:my-3" key={contact.value}>
                         <h1 className="font-medium text-3xl blap:text-2xl lap:text-lg">
                             {contact.type} -{" "}
-                            <i className="font-normal">{contact.value}</i>
+                            <a
+                                className="font-normal text-blue italic"
+                                href={contact.value}
+                            >
+                                {contact.value.includes("mailto:")
+                                    ? contact.value.replace("mailto:", "")
+                                    : contact.value.includes("tel:")
+                                    ? contact.value.replace("tel:", "")
+                                    : contact.value}
+                            </a>
                         </h1>
                     </div>
                 );

@@ -8,6 +8,7 @@ const Experience = () => {
     useEffect(() => {
         setExps([
             {
+                id: 1,
                 orgName: "Org Name",
                 pos: "Position",
                 year: "2018 - 2020",
@@ -15,6 +16,7 @@ const Experience = () => {
                 img: "/assets/kishoreji.png",
             },
             {
+                id: 2,
                 orgName: "Org Name",
                 pos: "Position 2",
                 year: "2018 - 2020",
@@ -22,6 +24,7 @@ const Experience = () => {
                 img: "/assets/kishoreji.png",
             },
             {
+                id: 3,
                 orgName: "Org Name",
                 pos: "Position",
                 year: "2018 - 2020",
@@ -29,6 +32,7 @@ const Experience = () => {
                 img: "/assets/kishoreji.png",
             },
             {
+                id: 4,
                 orgName: "Org Name",
                 pos: "Position 2",
                 year: "2018 - 2020",
@@ -42,7 +46,7 @@ const Experience = () => {
         <section id="Experience">
             <Heading text="Experience" />
             {exps.map((exp) => {
-                return <Card content={exp} />;
+                return <Card content={exp} key={exp.id} />;
             })}
         </section>
     );

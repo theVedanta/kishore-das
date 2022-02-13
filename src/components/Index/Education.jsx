@@ -8,6 +8,7 @@ const Education = () => {
     useEffect(() => {
         setEdus([
             {
+                id: 1,
                 orgName: "Insitute",
                 pos: "Degree Name",
                 year: "2018 - 2020",
@@ -15,6 +16,7 @@ const Education = () => {
                 img: "/assets/kishoreji.png",
             },
             {
+                id: 2,
                 orgName: "Institute",
                 pos: "Degree Name 2",
                 year: "2018 - 2020",
@@ -28,7 +30,7 @@ const Education = () => {
         <section id="Education">
             <Heading text="Education" />
             {edus.map((edu) => {
-                return <Card content={edu} />;
+                return <Card content={edu} key={edu.id} />;
             })}
         </section>
     );
