@@ -35,8 +35,8 @@ const Nav = () => {
             <div className="links w-1/3 flex justify-center ph:w-screen ph:flex-col ph:z-30">
                 {[
                     ["About", "/#About"],
-                    ["Experience", "/#Experience"],
-                    ["Education", "/#Education"],
+                    ["Training", "/#Training"],
+                    ["Consultancy", "/#Consultancy"],
                     ["Testimonials", "/#Testimonials"],
                     ["Contact", "/#Contact"],
                 ].map(([title, url]) => (
