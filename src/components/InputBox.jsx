@@ -1,10 +1,20 @@
-const InputBox = ({ text, supreme, name, id, placeholder, readonly }) => {
+const InputBox = ({
+    text,
+    supreme,
+    name,
+    id,
+    placeholder,
+    readonly,
+    width,
+    margin,
+    onChange,
+}) => {
     return (
         <input
             className={
                 !supreme
-                    ? "border-slate-400 rounded-xl w-full px-6 py-4 my-2"
-                    : "border-slate-400 rounded-xl w-full px-6 py-4 my-2 text-blue text-xl"
+                    ? `border-slate-400 rounded-xl ${width} px-6 py-4 my-2 ${margin}`
+                    : `border-slate-400 rounded-xl ${width} px-6 py-4 my-2 ${margin} text-blue text-xl`
             }
             style={{ borderWidth: "1px" }}
             defaultValue={text}
@@ -13,6 +23,7 @@ const InputBox = ({ text, supreme, name, id, placeholder, readonly }) => {
             readOnly={readonly}
             placeholder={placeholder}
             autoComplete="off"
+            onChange={onChange}
         />
     );
 };
@@ -23,6 +34,7 @@ InputBox.defaultProps = {
     id: "input_box",
     placeholder: "",
     readonly: false,
+    width: "w-full",
 };
 
 export default InputBox;

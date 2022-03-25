@@ -11,6 +11,12 @@ body {
 }
 img {
     object-fit: cover;
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 .owl-stage-outer {
     overflow: hidden;
@@ -49,7 +55,7 @@ img {
     background-color: #6198fe;
 }
 
-.category {
+select {
     -moz-appearance: none; /* Firefox */
     -webkit-appearance: none; /* Safari and Chrome */
     appearance: none;
