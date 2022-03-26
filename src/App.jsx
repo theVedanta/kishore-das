@@ -1,7 +1,6 @@
 import "./styles/index.css";
 import "./styles/all.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Nav from "./components/Nav";
 import Index from "./components/Index";
 import Blogs from "./components/Blog/Blogs";
 import BlogPage from "./components/Blog/BlogPage";
@@ -11,7 +10,6 @@ import "notyf/notyf.min.css";
 const App = () => {
     return (
         <BrowserRouter>
-            <Nav />
             <Routes>
                 <Route exact path="/" element={<Index />} />
                 <Route exact path="/blog" element={<Blogs />} />

@@ -1,7 +1,11 @@
 import Heading from "../Heading";
+import { useState } from "react";
+import BASE_API_URL from "../../BASE_API_URL";
 
 const Auth = ({ setAuthed }) => {
-    const auth = (e) => {
+    const [error, setError] = useState("");
+
+    const auth = async (e) => {
         e.preventDefault();
         const username = document
             .querySelector("input[name='username']")
@@ -10,12 +14,26 @@ const Auth = ({ setAuthed }) => {
             .querySelector("input[name='password']")
             .value.trim();
 
-        if (username === "username" && password === "password") {
-            setAuthed(true);
-            localStorage.setItem("token", "authed");
+        if (username !== "" && password !== "") {
+            const authedJson = await fetch(`${BASE_API_URL}/api/auth`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ username, password }),
+            });
+            const authed = await authedJson.json();
+
+            if (authed.done) {
+                localStorage.setItem("token", authed.token);
+                setAuthed(true);
+            } else {
+                localStorage.removeItem("token");
+                setAuthed(false);
+                setError(authed.message);
+            }
         } else {
-            setAuthed(false);
-            document.querySelector(".error").classList.add("opacity-100");
+            setError("Please enter username and password");
         }
     };
 
@@ -37,9 +55,7 @@ const Auth = ({ setAuthed }) => {
                 placeholder="Password"
                 className="w-1/2 bg-gray px-5 py-3 text-lg rounded-xl mb-4"
             />
-            <p className="error text-lg text-red-500 font-medium opacity-0 transition-all">
-                Username or Password is incorrect
-            </p>
+            <p className="error text-lg text-red-500 font-medium">{error}</p>
             <button
                 className="btn bg-blue px-10 py-3 rounded-xl text-white mt-6 text-xl"
                 type="submit"
