@@ -13,16 +13,20 @@ const options = {
     autoplayTimeout: 40000,
 };
 
-const Testimonials = () => {
+const Testimonials = ({ tests }) => {
     const testRef = useRef("test");
+
+    console.log(tests);
 
     return (
         <section id="Testimonials">
             <Heading text="Testimonials" />
             <OwlCarousel ref={testRef} options={options}>
-                <Testimonial />
-                <Testimonial />
-                <Testimonial />
+                {tests
+                    ? tests.map((test) => {
+                          return <Testimonial test={test} />;
+                      })
+                    : ""}
             </OwlCarousel>
         </section>
     );

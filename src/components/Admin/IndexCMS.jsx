@@ -52,7 +52,7 @@ const IndexCMS = () => {
 
     const upload = (e, main) => {
         const file = e.target.files[0];
-        const ext = file.name.split(".").pop();
+        const ext = file.name.split(".").pop().toLowerCase();
 
         notyf.success("Uploading image...");
 

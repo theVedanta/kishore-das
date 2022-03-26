@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 import Heading from "../Heading";
 
-const Contact = () => {
+const Contact = ({ conts }) => {
     const [contacts, setContacts] = useState([]);
 
+    function toTitleCase(str) {
+        return str.replace(/\w\S*/g, function (txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        });
+    }
+
     useEffect(() => {
-        setContacts([
-            { type: "Email", value: "mailto:hotmail.co" },
-            { type: "Number", value: "tel:1234567890" },
-            { type: "Linkedin", value: "https://www.linkedin.com/" },
-        ]);
-    }, []);
+        setContacts(conts ? conts : []);
+    }, [conts]);
 
     return (
         <section id="Contact" className="pb-44 tab:pb-20">
@@ -18,18 +20,18 @@ const Contact = () => {
             <br />
             {contacts.map((contact) => {
                 return (
-                    <div className="flex my-6 lap:my-3" key={contact.value}>
-                        <h1 className="font-medium text-3xl blap:text-2xl lap:text-lg">
-                            {contact.type} -{" "}
+                    <div className="flex my-6 lap:my-3" key={contact.contact}>
+                        <h1 className="text-3xl blap:text-2xl lap:text-lg">
+                            {toTitleCase(contact.name)} -{" "}
                             <a
                                 className="font-normal text-blue italic"
-                                href={contact.value}
+                                href={contact.contact}
                             >
-                                {contact.value.includes("mailto:")
-                                    ? contact.value.replace("mailto:", "")
-                                    : contact.value.includes("tel:")
-                                    ? contact.value.replace("tel:", "")
-                                    : contact.value}
+                                {contact.contact.includes("mailto:")
+                                    ? contact.contact.replace("mailto:", "")
+                                    : contact.contact.includes("tel:")
+                                    ? contact.contact.replace("tel:", "")
+                                    : contact.contact}
                             </a>
                         </h1>
                     </div>
