@@ -5,6 +5,7 @@ import Index from "./components/Index";
 import Blogs from "./components/Blog/Blogs";
 import BlogPage from "./components/Blog/BlogPage";
 import Admin from "./components/Admin/Admin";
+import Error from "./components/Error";
 import "notyf/notyf.min.css";
 
 const App = () => {
@@ -14,7 +15,18 @@ const App = () => {
                 <Route exact path="/" element={<Index />} />
                 <Route exact path="/blog" element={<Blogs />} />
                 <Route exact path="/blog/:id" element={<BlogPage />} />
-                <Route exact path="/admin/ishaan" element={<Admin />} />
+                <Route exact path="/admin" element={<Admin page={"CMS"} />} />
+                <Route
+                    exact
+                    path="/admin/blogs"
+                    element={<Admin page={"blog"} />}
+                />
+                <Route
+                    exact
+                    path="/admin/blogs/add"
+                    element={<Admin page={"add"} />}
+                />
+                <Route exact path="*" element={<Error />} />
             </Routes>
         </BrowserRouter>
     );

@@ -1,11 +1,11 @@
 import Auth from "./Auth";
-import IndexCMS from "./IndexCMS";
+import AuthedAdmin from "./AuthedAdmin";
 import { useState, useEffect } from "react";
 import BASE_API_URL from "../../BASE_API_URL";
 import { Notyf } from "notyf";
 const notyf = new Notyf();
 
-const Admin = () => {
+const Admin = ({ page }) => {
     const [authed, setAuthed] = useState(false);
 
     useEffect(() => {
@@ -27,7 +27,7 @@ const Admin = () => {
             if (authed.done) {
                 setAuthed(true);
             } else {
-                notyf.error("Some Error occurred");
+                notyf.error("You were logged out");
                 setAuthed(false);
                 localStorage.removeItem("token");
             }
@@ -40,7 +40,15 @@ const Admin = () => {
         }
     }, []);
 
-    return <>{authed ? <IndexCMS /> : <Auth setAuthed={setAuthed} />}</>;
+    return (
+        <>
+            {authed ? (
+                <AuthedAdmin page={page} />
+            ) : (
+                <Auth setAuthed={setAuthed} />
+            )}
+        </>
+    );
 };
 
 export default Admin;

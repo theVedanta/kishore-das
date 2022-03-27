@@ -3,37 +3,19 @@ import Blog from "./Blog";
 import Footer from "../Footer";
 import { useState, useEffect } from "react";
 import Nav from "../Nav";
+import BASE_API_URL from "../../BASE_API_URL";
 
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        setBlogs([
-            {
-                id: 1,
-                title: "Blog Post 1 Heading",
-                p: "Lorem ipsum dolor sit amet. Et repellendus molestiae est maxime nemo et odio excepturi et perferendis dolorem! Et voluptas consequatur in molestiae quisquam est dolorem odit hic illum distinctio ut voluptatum",
-                timestamp: "26th January, 2021",
-                imgs: ["/assets/kishoreji.png"],
-                tags: ["HR", "Management"],
-            },
-            {
-                id: 2,
-                title: "Blog Post 2 Heading",
-                p: "Lorem ipsum dolor sit amet. Et repellendus molestiae est maxime nemo et odio excepturi et perferendis dolorem! Et voluptas consequatur in molestiae quisquam est dolorem odit hic illum distinctio ut voluptatum",
-                timestamp: "26th January, 2021",
-                imgs: ["/assets/kishoreji.png"],
-                tags: ["HR", "Management"],
-            },
-            {
-                id: 3,
-                title: "Blog Post 3 Heading",
-                p: "Lorem ipsum dolor sit amet. Et repellendus molestiae est maxime nemo et odio excepturi et perferendis dolorem! Et voluptas consequatur in molestiae quisquam est dolorem odit hic illum distinctio ut voluptatum",
-                timestamp: "26th January, 2021",
-                imgs: ["/assets/kishoreji.png"],
-                tags: ["HR", "Management"],
-            },
-        ]);
+        const initialFetch = async () => {
+            const dataJson = await fetch(`${BASE_API_URL}/api/blogs`);
+            const data = await dataJson.json();
+
+            setBlogs(data.blogs);
+        };
+        initialFetch();
     }, []);
 
     return (
@@ -58,12 +40,16 @@ const Blogs = () => {
                         {blogs.map((blog) => {
                             return (
                                 <Blog
-                                    key={blog.id}
+                                    key={blog._id}
                                     title={blog.title}
-                                    p={blog.p}
-                                    timestamp={blog.timestamp}
-                                    id={blog.id}
-                                    tags={blog.tags}
+                                    // p={blog.p}
+                                    content={blog.content.replace(
+                                        /<img[^>]*>/g,
+                                        ""
+                                    )}
+                                    timestamp={new Date(blog.createdAt)}
+                                    id={blog._id}
+                                    // tags={blog.tags}
                                 />
                             );
                         })}
