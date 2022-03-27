@@ -12,8 +12,10 @@ const Consultancy = ({ consul }) => {
     return (
         <section id="Consultancy">
             <Heading text="Consultancy" />
-            <p className="mt-7 mb-12 text-xl">{consul ? consul.desc : ""}</p>
-            <div className="cons flex">
+            <p className="text-lg mt-10 mb-10 blap:text-base lap:text-text-sm tab:text-xs ph:mt-5 ph:text-justify">
+                {consul ? consul.desc : ""}
+            </p>
+            <div className="cons flex flex-wrap">
                 {cons.map((con) => {
                     return <Card content={con} key={con} />;
                 })}

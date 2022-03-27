@@ -20,7 +20,7 @@ const Card = ({ content }) => {
         //         />
         //     </div>
         // </div>
-        <div className="flex bg-gray rounded-xl py-4 px-14 mr-5 text-xl font-medium text-black">
+        <div className="flex bg-gray rounded-xl py-4 px-14 mr-5 mb-5 text-xl font-medium text-black lap:text-lg lap:px-10 lap:py-3 tab:text-sm ph:px-6 ph:py-3 ph:mr-3">
             <span className="opacity-50">{content}</span>
         </div>
     );

@@ -11,7 +11,12 @@ const TextBox = ({ handleContentChange }) => {
 
     return (
         <div className="textbox-wrapper">
-            <input type="file" id="imgupload" style={{ display: "none" }} />
+            <input
+                type="file"
+                id="imgupload"
+                accept="image/*"
+                style={{ display: "none" }}
+            />
             <Editor
                 onChange={handleEditorChange}
                 apiKey="c9p4pywnbq8txxusovcgkjacj2gpqa4ppqwnz5grbpt1q8yk"

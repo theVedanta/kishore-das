@@ -29,6 +29,8 @@ img {
 }
 .owl-item {
     width: 100%;
+    height: auto;
+    margin: 0 2vw;
 }
 .owl-dots {
     display: flex;
@@ -116,7 +118,7 @@ select {
 }
 
 #para img {
-    width: 15vw;
+    width: 20vw;
     margin-top: 2vh;
 }
 /* MEDIAS -------------------------------------------------------------------------------- */
@@ -139,9 +141,6 @@ select {
         padding: 2vh 0.7vw;
         margin: 0.4vh 0.3vw;
     }
-    .owl-item {
-        height: 24vh;
-    }
     .owl-stage-outer {
         margin-top: 3vh;
     }
@@ -151,11 +150,11 @@ select {
         padding: 2vh 2vw;
         margin: 0.4vh 1vw;
     }
-    .owl-item {
-        height: 40vh;
-    }
     .owl-stage-outer {
         margin-top: 3vh;
+    }
+    .owl-item {
+        margin: 0 5vw;
     }
     /* SIDE NAVIGATION ----------------------------------------------------------------------- */
     .links {

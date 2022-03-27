@@ -3,6 +3,7 @@ import AuthedAdmin from "./AuthedAdmin";
 import { useState, useEffect } from "react";
 import BASE_API_URL from "../../BASE_API_URL";
 import { Notyf } from "notyf";
+
 const notyf = new Notyf();
 
 const Admin = ({ page }) => {

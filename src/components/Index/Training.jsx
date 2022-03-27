@@ -12,8 +12,10 @@ const Training = ({ train }) => {
     return (
         <section id="Training">
             <Heading text="Training" />
-            <p className="mt-7 mb-12 text-xl">{train ? train.desc : ""}</p>
-            <div className="trs flex">
+            <p className="text-lg mt-10 mb-10 blap:text-base lap:text-text-sm tab:text-xs ph:mt-5 ph:text-justify">
+                {train ? train.desc : ""}
+            </p>
+            <div className="trs flex flex-wrap">
                 {trs.map((tr) => {
                     return <Card content={tr} key={tr} />;
                 })}

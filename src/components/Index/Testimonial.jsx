@@ -11,7 +11,7 @@ const Testimonial = ({ test }) => {
                     {test ? test.name : ""}
                 </h1>
             </div>
-            <p className="text-xl font-normal mt-10 pr-16 lap:text-base tab:text-sm tab:pr-6 ph:pr-0 ph:text-justify ph:mt-5">
+            <p className="text-xl h-full font-normal mt-10 pr-16 lap:text-base tab:text-sm tab:pr-6 ph:pr-0 ph:text-justify ph:mt-5">
                 {test ? test.desc : ""}
             </p>
         </div>
