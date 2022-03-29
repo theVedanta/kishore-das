@@ -2,12 +2,14 @@ import Auth from "./Auth";
 import AuthedAdmin from "./AuthedAdmin";
 import { useState, useEffect } from "react";
 import BASE_API_URL from "../../BASE_API_URL";
+import Load from "../Load";
 import { Notyf } from "notyf";
 
 const notyf = new Notyf();
 
 const Admin = ({ page }) => {
     const [authed, setAuthed] = useState(false);
+    const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
         const token = localStorage.getItem("token");
@@ -27,9 +29,11 @@ const Admin = ({ page }) => {
 
             if (authed.done) {
                 setAuthed(true);
+                setLoaded(true);
             } else {
                 notyf.error("You were logged out");
                 setAuthed(false);
+                setLoaded(true);
                 localStorage.removeItem("token");
             }
         };
@@ -37,17 +41,20 @@ const Admin = ({ page }) => {
         if (token) {
             checkAuth();
         } else {
+            setLoaded(true);
             setAuthed(false);
         }
     }, []);
 
     return (
         <>
-            {authed ? (
-                <AuthedAdmin page={page} />
-            ) : (
-                <Auth setAuthed={setAuthed} />
-            )}
+            <Load loaded={loaded}>
+                {authed ? (
+                    <AuthedAdmin page={page} />
+                ) : (
+                    <Auth setAuthed={setAuthed} />
+                )}
+            </Load>
         </>
     );
 };

@@ -7,9 +7,9 @@ import Contact from "./Index/Contact";
 import Footer from "./Footer";
 import { useEffect, useState } from "react";
 import BASE_API_URL from "../BASE_API_URL";
-import HashLoader from "react-spinners/HashLoader";
 import Nav from "./Nav";
 import { Notyf } from "notyf";
+import Load from "./Load";
 
 const notyf = new Notyf();
 
@@ -34,7 +34,7 @@ const Index = () => {
     return (
         <>
             <Nav />
-            {index.header ? (
+            <Load loaded={index.header ? index.header.name : false}>
                 <main className="relative">
                     <div className="main-container px-72 pt-16 blap:px-52 lap:px-32 lap:pt-10 tab:px-20 ph:px-6 ph:pt-3">
                         <Header header={index ? index.header : ""} />
@@ -46,11 +46,7 @@ const Index = () => {
                     </div>
                     <Footer />
                 </main>
-            ) : (
-                <div className="loading flex justify-center items-center h-screen">
-                    <HashLoader loading={true} size={80} color={"#6198FE"} />
-                </div>
-            )}
+            </Load>
         </>
     );
 };

@@ -55,8 +55,7 @@ const AdminBlogAdd = () => {
                         id="category"
                         className="category bg-darkGray rounded-xl px-6 py-4 ml-10 w-1/4"
                     >
-                        <option value="all">Category: All</option>
-                        <option value="leadership">Leadership</option>
+                        <option value="leadership">Category: Leadership</option>
                         <option value="management">Management</option>
                         <option value="hr">HR</option>
                     </select>

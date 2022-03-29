@@ -131,6 +131,9 @@ select {
         padding: 2vh 0.7vw;
         margin: 0.4vh 0.3vw;
     }
+    #para img {
+        width: 30vw;
+    }
 }
 @media (max-width: 1023px) {
     .owl-dot span {
@@ -143,6 +146,9 @@ select {
     }
     .owl-stage-outer {
         margin-top: 3vh;
+    }
+    #para img {
+        width: 50vw;
     }
 }
 @media (max-width: 767px) {
@@ -175,5 +181,9 @@ select {
     .links a {
         padding: 0.6rem 0;
         margin: 0.6vh 0;
+    }
+    #para img {
+        width: 100%;
+        margin-top: 1vh;
     }
 }

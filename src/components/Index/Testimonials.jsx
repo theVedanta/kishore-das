@@ -16,8 +16,6 @@ const options = {
 const Testimonials = ({ tests }) => {
     const testRef = useRef("test");
 
-    console.log(tests);
-
     return (
         <section id="Testimonials">
             <Heading text="Testimonials" />

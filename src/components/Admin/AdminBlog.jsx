@@ -12,6 +12,14 @@ const notyf = new Notyf();
 const AdminBlog = () => {
     const [blogs, setBlogs] = useState([]);
     const [remBlog, setRemBlog] = useState("");
+    const [categBlogs, setCategBlogs] = useState([]);
+
+    const changeBlogs = (e) => {
+        const val = e.target.value;
+
+        if (val === "all") setCategBlogs(blogs);
+        else setCategBlogs(blogs.filter((blog) => blog.category === val));
+    };
 
     const removeBlog = async (id) => {
         toggleTrans();
@@ -44,6 +52,7 @@ const AdminBlog = () => {
             const data = await dataJson.json();
 
             setBlogs(data.blogs);
+            setCategBlogs(data.blogs);
         };
         initialFetch();
     }, []);
@@ -89,7 +98,8 @@ const AdminBlog = () => {
                         <select
                             name="category"
                             id="category"
-                            className="category bg-darkGray rounded-lg px-6 py-3 w-1/4 "
+                            className="category bg-darkGray rounded-lg px-6 py-3 w-1/4"
+                            onChange={(eve) => changeBlogs(eve)}
                         >
                             <option value="all">Category: All</option>
                             <option value="leadership">Leadership</option>
@@ -98,7 +108,7 @@ const AdminBlog = () => {
                         </select>
                     </div>
                     <div className="flex flex-col mt-10 items-center pb-44">
-                        {blogs.map((blog) => {
+                        {categBlogs.map((blog) => {
                             return (
                                 <div className="blog-hold flex items-center w-full">
                                     <Blog
