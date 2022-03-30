@@ -15,16 +15,19 @@ const notyf = new Notyf();
 
 const Index = () => {
     const [index, setIndex] = useState({});
+    const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
         const initialFetch = async () => {
             try {
                 const dataJson = await fetch(`${BASE_API_URL}/api/cms`);
+                setLoaded(true);
                 const data = await dataJson.json();
                 const index = data.index;
 
                 setIndex(index);
             } catch (err) {
+                setLoaded(false);
                 notyf.error("Something went wrong");
             }
         };
@@ -34,7 +37,7 @@ const Index = () => {
     return (
         <>
             <Nav />
-            <Load loaded={index.header ? index.header.name : false}>
+            <Load loaded={loaded}>
                 <main className="relative">
                     <div className="main-container px-72 pt-16 blap:px-52 lap:px-32 lap:pt-10 tab:px-20 ph:px-6 ph:pt-3">
                         <Header header={index ? index.header : ""} />
