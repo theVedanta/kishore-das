@@ -17,6 +17,10 @@ img {
     -webkit-user-select: none;
     -ms-user-select: none;
 }
+#root {
+    width: 100vw;
+    overflow-x: hidden;
+}
 .owl-stage-outer {
     overflow: hidden;
     margin-top: 7vh;

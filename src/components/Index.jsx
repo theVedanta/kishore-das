@@ -10,6 +10,7 @@ import BASE_API_URL from "../BASE_API_URL";
 import Nav from "./Nav";
 import { Notyf } from "notyf";
 import Load from "./Load";
+import AOS from "aos";
 
 const notyf = new Notyf();
 
@@ -21,16 +22,23 @@ const Index = () => {
         const initialFetch = async () => {
             try {
                 const dataJson = await fetch(`${BASE_API_URL}/api/cms`);
-                setLoaded(true);
                 const data = await dataJson.json();
                 const index = data.index;
 
                 setIndex(index);
+
+                AOS.init({
+                    delay: 400,
+                    duration: 500,
+                    once: true,
+                });
             } catch (err) {
                 setLoaded(false);
                 notyf.error("Something went wrong");
             }
         };
+
+        setLoaded(true);
         initialFetch();
     }, []);
 

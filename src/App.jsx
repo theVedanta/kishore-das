@@ -7,6 +7,7 @@ import BlogPage from "./components/Blog/BlogPage";
 import Admin from "./components/Admin/Admin";
 import Error from "./components/Error";
 import "notyf/notyf.min.css";
+import "aos/dist/aos.css";
 
 const App = () => {
     return (
