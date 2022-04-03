@@ -10,7 +10,7 @@ const Consultancy = ({ consul }) => {
     }, [consul]);
 
     return (
-        <section id="Consultancy" data-aos="fade-up">
+        <section id="Consultancy">
             <Heading text="Consultancy" />
             <p className="text-lg mt-10 mb-10 blap:text-base lap:text-text-sm tab:text-xs ph:mt-5 ph:text-justify">
                 {consul ? consul.desc : ""}

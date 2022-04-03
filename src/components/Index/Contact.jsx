@@ -15,7 +15,7 @@ const Contact = ({ conts }) => {
     }, [conts]);
 
     return (
-        <section id="Contact" className="pb-44 tab:pb-20" data-aos="fade-up">
+        <section id="Contact" className="pb-44 tab:pb-20">
             <Heading text="Contact" />
             <br />
             {contacts.map((contact) => {

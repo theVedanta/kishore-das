@@ -65,7 +65,10 @@ const Nav = () => {
                 ))}
             </div>
             <div className="sub-links w-1/3 flex justify-end ph:justify-center">
-                {[["Blog", "/blog"]].map(([title, url]) => (
+                {[
+                    ["Blog", "/blog"],
+                    ["Resume", "/assets/resume.pdf"],
+                ].map(([title, url]) => (
                     <Link
                         key={title}
                         to={url}

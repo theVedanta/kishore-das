@@ -17,7 +17,7 @@ const Testimonials = ({ tests }) => {
     const testRef = useRef("test");
 
     return (
-        <section id="Testimonials" data-aos="fade-up">
+        <section id="Testimonials">
             <Heading text="Testimonials" />
             <OwlCarousel ref={testRef} options={options}>
                 {tests

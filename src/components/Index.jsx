@@ -22,6 +22,7 @@ const Index = () => {
         const initialFetch = async () => {
             try {
                 const dataJson = await fetch(`${BASE_API_URL}/api/cms`);
+                setLoaded(true);
                 const data = await dataJson.json();
                 const index = data.index;
 
@@ -38,7 +39,6 @@ const Index = () => {
             }
         };
 
-        setLoaded(true);
         initialFetch();
     }, []);
 

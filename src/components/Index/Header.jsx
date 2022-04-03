@@ -3,7 +3,10 @@ import Heading from "../Heading";
 
 const Header = ({ header }) => {
     return (
-        <section className="w-full flex justify-between items-center ph:flex-col-reverse">
+        <section
+            className="w-full flex justify-between items-center ph:flex-col-reverse"
+            data-aos="fade-up"
+        >
             <div className="header-left flex flex-col w-1/2 tab:w-2/3 ph:w-full ph:text-center">
                 <Heading text={header ? header.name : ""} />
                 <p className="font-medium text-2xl mb-8 blap:text-xl lap:text-lg ph:text-base">
