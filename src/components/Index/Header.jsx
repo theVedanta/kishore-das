@@ -6,6 +6,7 @@ const Header = ({ header }) => {
         <section
             className="w-full flex justify-between items-center ph:flex-col-reverse"
             data-aos="fade-up"
+            id="Header"
         >
             <div className="header-left flex flex-col w-1/2 tab:w-2/3 ph:w-full ph:text-center">
                 <Heading text={header ? header.name : ""} />

@@ -12,6 +12,7 @@ const Contact = ({ conts }) => {
 
     useEffect(() => {
         setContacts(conts ? conts : []);
+        console.log(conts);
     }, [conts]);
 
     return (
@@ -25,13 +26,22 @@ const Contact = ({ conts }) => {
                             {toTitleCase(contact.name)} -{" "}
                             <a
                                 className="font-normal text-blue italic"
-                                href={contact.contact}
+                                target={
+                                    contact.name !== "mail" &&
+                                    contact.name !== "phone"
+                                        ? "_blank"
+                                        : ""
+                                }
+                                rel="noreferrer"
+                                href={`${
+                                    contact.name === "mail"
+                                        ? "mailto:"
+                                        : contact.name === "phone"
+                                        ? "tel:"
+                                        : ""
+                                }${contact.contact}`}
                             >
-                                {contact.contact.includes("mailto:")
-                                    ? contact.contact.replace("mailto:", "")
-                                    : contact.contact.includes("tel:")
-                                    ? contact.contact.replace("tel:", "")
-                                    : contact.contact}
+                                {contact.contact}
                             </a>
                         </h1>
                     </div>

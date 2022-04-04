@@ -18,19 +18,19 @@ const Nav = () => {
     return (
         <nav className="nav px-16 bg-gray flex justify-between items-center border-b-2 border-b-slate-200 fixed top-0 left-0 w-screen z-50 lap:px-10 ph:px-6 ph:bg-white ph:border-none">
             <div className="logo-hold w-1/3 ph:w-1/3 ph:z-40">
-                <Link
-                    onClick={() => {
-                        setActiveLink("");
-                        document.title = `Kishore Das`;
-                    }}
-                    to="/"
+                <a
+                    // onClick={() => {
+                    //     setActiveLink("");
+                    //     document.title = `Kishore Das`;
+                    // }}
+                    href="#Header"
                 >
                     <img
                         src="/assets/KD.svg"
                         alt="logo"
                         className="logo w-12 h-6 object-contain lap:h-5 lap:w-10 tab:w-8 tab:h-4 ph:my-4"
                     />
-                </Link>
+                </a>
             </div>
             <div className="links w-1/3 flex justify-center ph:w-screen ph:flex-col ph:z-30">
                 {[
