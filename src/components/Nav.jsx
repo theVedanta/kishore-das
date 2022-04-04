@@ -23,7 +23,7 @@ const Nav = () => {
                     //     setActiveLink("");
                     //     document.title = `Kishore Das`;
                     // }}
-                    href="#Header"
+                    href="/#Header"
                 >
                     <img
                         src="/assets/KD.svg"

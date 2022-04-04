@@ -39,7 +39,7 @@ const Blogs = () => {
                             <select
                                 name="category"
                                 id="category"
-                                className="category bg-darkGray rounded-lg px-6 py-3 w-1/4 lap:text-sm tab:w-1/3 ph:w-1/2"
+                                className="category bg-gray rounded-lg px-6 py-3 w-1/4 lap:text-sm tab:w-1/3 ph:w-1/2"
                                 onChange={(eve) => changeBlogs(eve)}
                             >
                                 <option value="all">Category: All</option>
