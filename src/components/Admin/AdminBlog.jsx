@@ -14,8 +14,10 @@ const AdminBlog = () => {
     const [remBlog, setRemBlog] = useState("");
     const [categBlogs, setCategBlogs] = useState([]);
 
-    const changeBlogs = (e) => {
-        const val = e.target.value;
+    const changeCateg = () => {
+        const val = document
+            .querySelector("select[name='category']")
+            .value.trim();
 
         if (val === "all") setCategBlogs(blogs);
         else setCategBlogs(blogs.filter((blog) => blog.category === val));
@@ -45,6 +47,19 @@ const AdminBlog = () => {
             .querySelector(".trans-del")
             .classList.toggle("trans-del-active");
     };
+
+    useEffect(() => {
+        const effectChangeCateg = () => {
+            const val = document
+                .querySelector("select[name='category']")
+                .value.trim();
+
+            if (val === "all") setCategBlogs(blogs);
+            else setCategBlogs(blogs.filter((blog) => blog.category === val));
+        };
+
+        effectChangeCateg();
+    }, [blogs]);
 
     useEffect(() => {
         const initialFetch = async () => {
@@ -99,7 +114,7 @@ const AdminBlog = () => {
                             name="category"
                             id="category"
                             className="category bg-darkGray rounded-lg px-6 py-3 w-1/4"
-                            onChange={(eve) => changeBlogs(eve)}
+                            onChange={changeCateg}
                         >
                             <option value="all">Category: All</option>
                             <option value="leadership">Leadership</option>
