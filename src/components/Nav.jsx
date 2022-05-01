@@ -17,7 +17,7 @@ const Nav = () => {
 
     return (
         <nav className="nav px-16 bg-gray flex justify-between items-center border-b-2 border-b-slate-200 fixed top-0 left-0 w-screen z-50 lap:px-10 ph:px-6 ph:bg-white ph:border-none">
-            <div className="logo-hold w-1/3 ph:w-1/3 ph:z-40">
+            <div className="logo-hold w-3/12 ph:w-1/3 ph:z-40">
                 <a
                     // onClick={() => {
                     //     setActiveLink("");
@@ -32,7 +32,7 @@ const Nav = () => {
                     />
                 </a>
             </div>
-            <div className="links w-1/3 flex justify-center ph:w-screen ph:flex-col ph:z-30">
+            <div className="links w-6/12 flex justify-center ph:w-screen ph:flex-col ph:z-30">
                 {[
                     ["About", "/#About"],
                     ["Training", "/#Training"],
@@ -64,7 +64,7 @@ const Nav = () => {
                     </a>
                 ))}
             </div>
-            <div className="sub-links w-1/3 flex justify-end ph:justify-center">
+            <div className="sub-links w-3/12 flex justify-end ph:justify-center">
                 {[
                     ["Blog", "/blog"],
                     ["Resume", "/assets/resume.pdf"],
