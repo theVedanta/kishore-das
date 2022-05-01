@@ -16,12 +16,10 @@ const notyf = new Notyf();
 
 const Index = () => {
     const [index, setIndex] = useState({});
-    // const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
         const initialFetch = async () => {
             try {
-                // setLoaded(true);
                 const dataJson = await fetch(`${BASE_API_URL}/api/cms`);
                 const data = await dataJson.json();
                 const index = data.index;
@@ -34,7 +32,6 @@ const Index = () => {
                     once: true,
                 });
             } catch (err) {
-                // setLoaded(false);
                 notyf.error("Something went wrong");
             }
         };
