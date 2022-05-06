@@ -4,7 +4,7 @@ import Footer from "../Footer";
 import { useState, useEffect } from "react";
 import Nav from "../Nav";
 import BASE_API_URL from "../../BASE_API_URL";
-import Load from "../Load";
+// import Load from "../Load";
 
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
@@ -31,7 +31,7 @@ const Blogs = () => {
     return (
         <>
             <Nav />
-            <Load loaded={blogs[0] ? blogs[0].title : false}>
+            {/* <Load loaded={blogs[0] ? blogs[0].title : false}> */}
                 <main className="min-h-screen relative">
                     <div className="main-container px-72 pt-36 blap:px-52 lap:px-32 lap:pt-24 tab:px-20 ph:px-6">
                         <div className="flex justify-between items-center ph:mb-5">
@@ -69,7 +69,7 @@ const Blogs = () => {
                     </div>
                     <Footer />
                 </main>
-            </Load>
+            {/* </Load> */}
         </>
     );
 };

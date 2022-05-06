@@ -10,7 +10,7 @@ const Training = ({ train }) => {
     }, [train]);
 
     return (
-        <section id="Training">
+        <section id="Training" data-aos="fade-up" data-aos-delay="900">
             <Heading text="Training" />
             <p className="text-lg mt-10 mb-10 blap:text-base lap:text-text-sm tab:text-xs ph:mt-5 ph:text-justify">
                 {train ? train.desc : ""}

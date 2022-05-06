@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import BASE_API_URL from "../BASE_API_URL";
 import Nav from "./Nav";
 import { Notyf } from "notyf";
-import Load from "./Load";
+// import Load from "./Load";
 import AOS from "aos";
 
 const notyf = new Notyf();
@@ -42,7 +42,7 @@ const Index = () => {
     return (
         <>
             <Nav />
-            <Load loaded={index ? index.header : false}>
+            {/* <Load loaded={index ? index.header : false}> */}
                 <main className="relative">
                     <div className="main-container px-72 pt-16 blap:px-52 lap:px-32 lap:pt-10 tab:px-20 ph:px-6 ph:pt-3">
                         <Header header={index ? index.header : ""} />
@@ -54,7 +54,7 @@ const Index = () => {
                     </div>
                     <Footer />
                 </main>
-            </Load>
+            {/* </Load> */}
         </>
     );
 };

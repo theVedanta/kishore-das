@@ -4,7 +4,7 @@ import { FaChevronLeft } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import Nav from "../Nav";
 import BASE_API_URL from "../../BASE_API_URL";
-import Load from "../Load";
+// import Load from "../Load";
 
 const monthNames = [
     "January",
@@ -43,7 +43,7 @@ const BlogPage = () => {
     return (
         <>
             <Nav />
-            <Load loaded={blog.title ? blog.title : false}>
+            {/* <Load loaded={blog.title ? blog.title : false}> */}
                 <main className="min-h-screen relative">
                     <div className="main-container px-72 pt-24 pb-32 blap:px-52 lap:px-32 lap:pt-10 tab:px-20 ph:px-6 ph:pt-10">
                         <Link
@@ -79,7 +79,7 @@ const BlogPage = () => {
                     </div>
                     <Footer />
                 </main>
-            </Load>
+            {/* </Load> */}
         </>
     );
 };
