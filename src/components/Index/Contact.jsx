@@ -12,7 +12,6 @@ const Contact = ({ conts }) => {
 
     useEffect(() => {
         setContacts(conts ? conts : []);
-        console.log(conts);
     }, [conts]);
 
     return (
@@ -38,7 +37,7 @@ const Contact = ({ conts }) => {
                                         ? "mailto:"
                                         : contact.name === "phone"
                                         ? "tel:"
-                                        : ""
+                                        : "https://"
                                 }${contact.contact}`}
                             >
                                 {contact.contact}

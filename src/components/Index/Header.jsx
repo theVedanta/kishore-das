@@ -1,7 +1,20 @@
 import { FaEnvelope } from "react-icons/fa";
 import Heading from "../Heading";
+import { useState, useEffect } from "react";
 
 const Header = ({ header }) => {
+    const [sub, setSub] = useState("");
+
+    useEffect(() => {
+        if (header) {
+            let subToSet = header.sub;
+            const lastIndex = subToSet.lastIndexOf(" ");
+            subToSet = subToSet.substring(0, lastIndex);
+
+            setSub(subToSet);
+        }
+    }, [header]);
+
     return (
         <section
             className="w-full flex justify-between items-center ph:flex-col-reverse"
@@ -11,7 +24,15 @@ const Header = ({ header }) => {
             <div className="header-left flex flex-col w-1/2 tab:w-2/3 ph:w-full ph:text-center">
                 <Heading text={header ? header.name : ""} />
                 <p className="font-medium text-2xl mb-8 blap:text-xl lap:text-lg ph:text-base">
-                    {header ? header.sub : ""}
+                    {header ? sub : ""}&nbsp;
+                    <a
+                        className="text-blue font-semiMed"
+                        href="https://www.unitol.in/"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Unitol
+                    </a>
                 </p>
                 <p className="pr-16 text-lg blap:text-base blap:pr-4 lap:text-sm lap:pr-0 tab:text-xs ph:text-justify">
                     {header ? header.desc : ""}
